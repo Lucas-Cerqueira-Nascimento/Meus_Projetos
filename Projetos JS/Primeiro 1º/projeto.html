@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="projeto.css">
+    <title>Projeto Inputs :D </title>
+</head>
+<body>
+    <header><h1>Armazenamento de Usuario </h1></header>
+
+    <main class="Container_main">
+
+        <section class="containValores">
+            <article class="itens_valores">
+                <h2>Usuário</h2>
+                <div class="itens_V">
+                    <label for="Inome">Usuário:</label>
+                        <input type="text" name="nome" id="Inome" placeholder="Nome">
+                    <label for="Inum">Numero Favorito:</label>
+                        <input type="number" name="Money" id="Inum" min="1" max="10" placeholder="1 a 10">
+                    <label for="Iage" id="L_age">Idade:</label>
+                        <input type="range" name="Idade" id="Iage" min="5" max="110"> 
+                    <label for="Masc" class="break">Masculino:</label>
+                        <input type="checkbox" name="M" class="break" id="Masc">
+                    <label for="Femi" class="break">Feminino:</label>
+                        <input type="checkbox" name="M" class="break" id="Femi">
+                    </div>
+                    <button onclick="Salvar_Conteudo()" class="btn_save">Salvar!</button>
+
+            </article>
+            
+        </section>
+        <section class="containResposta">
+            <article class="itens_res">
+                <h2>Área de armazenamento</h2>
+                <div class="itens_R">
+
+                        <label for="Masc_R">Masculino:</label>
+                            <input type="checkbox" name="Sexo" id="Masc_R">
+                        <label for="Femi_R">Feminino:</label>
+                            <input type="checkbox" name="Sexo" id="Femi_R">
+
+                    <button onclick="Mostrar_save()">Checar!</button>
+                </div>
+                <div class="Table_save">
+                    <h3>Nome</h3>
+                    <h3>N. Favorito</h3>
+                    <h3>Idade</h3>
+                    <h3>Sexo</h3>
+
+                </div>
+            </article>
+
+        </section>
+
+    </main>
+
+    <script src="Inputs.js"></script>
+</body>
+</html>

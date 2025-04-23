@@ -1,0 +1,100 @@
+@charset "UTF-8";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header{
+    margin: 0 auto;
+    background-color: #e8e8f2;
+    width: 500px;
+    text-align: center;
+}
+
+header h1{
+    padding: 10px;
+}
+
+main{
+    position: relative;
+    margin: 0 auto;
+    width: 500px;
+    height: 600px;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid black;
+}
+
+main > section.inpt_cal{
+    width: 100%;
+}
+
+.inpt_cal div{
+    display: flex;
+    flex-flow: row-reverse nowrap;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding-right: 10px;
+    padding-bottom: 2px;
+    height: 70px;
+    text-align: right;
+    font-size: 2.5em;
+    color: white;
+    background-color: black;
+}
+
+.inpt_cal input{
+    width: 100%;
+    padding: 10px;
+}
+
+main > section.buttons{
+    position: absolute;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    width: 100%;
+    height: 528px;
+    background-color: white;
+    align-items: center;
+    justify-items: center;
+}
+
+.buttons button{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    width: 50px;
+    height: 50px;
+}
+
+.buttons #Apagar{
+    width: 100px;
+    background-color: orangered;
+}
+
+.buttons #igual{
+    height: 100px;
+    background-color: lightgreen;
+}
+
+button{
+    background-color: gray;
+}
+
+button:hover{
+    cursor: pointer;
+    color: white;
+    background-color: lightgray;
+}
+
+button:active{
+    transform: scale(0.9);
+}
