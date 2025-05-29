@@ -52,7 +52,7 @@ async function Resultado(Nome_Storage, Cor_Storage){
         })
         
  }catch (error){
-        alert(`Ocorreu um erro ${error}`)
+        alert(`Ocorreu um erro ${error.message}`)
  }
 
  setTimeout(() => {
