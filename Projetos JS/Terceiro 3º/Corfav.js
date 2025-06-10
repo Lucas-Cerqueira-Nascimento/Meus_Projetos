@@ -4,7 +4,7 @@ const Inome = document.querySelector("#Inome")
   const btn_save = document.querySelector('#btn_save')
 
   btn_save.addEventListener("click", () => {
-  // converte string para array se n tiver ele cria uma 
+  // converte string para array, se n tiver, ele cria uma 
         const names = JSON.parse(localStorage.getItem("nome")) || []  
         const Colors = JSON.parse(localStorage.getItem("Cor")) || []  
 
