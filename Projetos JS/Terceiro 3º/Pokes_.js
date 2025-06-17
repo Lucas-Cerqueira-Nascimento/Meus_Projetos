@@ -27,23 +27,58 @@ function PrintSpriters(date){
 const spriteSources = [
     date.sprites.front_default,
     date.sprites.back_default,
-    date.sprites.front_female,
-    date.sprites.back_female,
-
     date.sprites.front_shiny,
     date.sprites.back_shiny,
+    
+    date.sprites.front_female,
+    date.sprites.back_female,
     date.sprites.front_shiny_female,
     date.sprites.back_shiny_female,
     date.sprites.other['official-artwork'].front_default
 ]
 
-spriteSources.forEach(src => {
+spriteSources.forEach((src, index) => {
     const Img_Sprit = document.createElement("img")
     Img_Sprit.classList.add("img_Pokes")
     Img_Sprit.src = src
     div_img.appendChild(Img_Sprit)
-})
 
+    if(src == null){
+      Img_Sprit.style.color = "white"
+       Img_Sprit.alt = "Imagem não encontrada!"
+      Img_Sprit.title = "Versão Fêmea"
+    }
+
+    // jeito do ChatGPT (muito daora isso)
+    const imgMap = {
+      0: date.name,
+      2: `${date.name} Shiny`,
+      4: `${date.name} Fêmea`,
+      6: `${date.name} Shiny Fêmea`, 
+      8: `${date.name} Imagem`
+    }
+      // imgMap pega o index correto dos src. 
+    Img_Sprit.title = imgMap[index] || date.name // caso não tenha o index, eles fica com date.name / default
+  
+    // meu jeito
+/*    switch (index){
+      case 0:
+        Img_Sprit.title = date.name
+        break;
+      case 2:
+        Img_Sprit.title = `${date.name} Shiny`
+        break;
+      case 4:
+        Img_Sprit.title = `${date.name} Fêmea`
+        break;
+      case 6:
+        Img_Sprit.title = `${date.name} Fêmea Shiny`
+        break;
+      default: Img_Sprit.tabIndex = date.name
+        break;
+    }
+*/
+})
 }
     // ChatGpt
 function debounce(func, delay) {
@@ -87,7 +122,6 @@ fetch("https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0")
      option.innerText = poke.name // pega só os nomes dos Pokémons
    SelectPoke.appendChild(option)
    })
-
 
 /* meu jeito
   for(let i = 0; i < dados.count; i++){

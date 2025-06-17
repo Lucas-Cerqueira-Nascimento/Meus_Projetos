@@ -90,6 +90,7 @@ main.container_Poke{
 #img_poke > img.img_Pokes{
     width: 100px;
     height: 100px;
+    text-align: center;
     border: 1px solid white;
 }
 
