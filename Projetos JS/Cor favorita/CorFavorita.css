@@ -1,0 +1,149 @@
+@charset "UTF-8";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(to top, #adff2f7d, black);
+    overflow: hidden;
+}
+
+header{
+    width: 500px;
+    margin: auto;
+    margin-top: 2px;
+    margin-bottom: 5px;
+}
+
+header > h1{
+    text-align: center;
+    color: white;
+}
+
+main#container{
+    margin: auto;
+    width: 600px;
+    height: 90%;
+    background-color: gray;
+    border: 1px solid white;
+}
+
+#container section{
+    margin: auto;
+}
+
+#container > section.inpt_cor{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 40%;
+    width: 100%;
+    background-color: transparent;
+}
+
+.inpt_cor h2{
+    color: white;
+    text-shadow: 2px 2px 5px #00000085;
+}
+
+.inpt_cor > div.Cor_Fav{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+
+    height: 100%;
+    width: 50%;
+
+    text-align: center;
+}
+
+.Cor_Fav > label{
+    font-size: 1.1em;
+    color: white;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.631);
+}
+
+.Cor_Fav > input#Inome{
+    width: 50%;
+    height: 70%;
+    font-family: monospace;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+.Cor_Fav > input#Icor{
+        width: 100px;
+        height: 30px;
+}
+
+.Cor_Fav > button#btn_save{
+    width: 55%;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+
+#container > section.color_save{
+    height: 60%;
+    background-color: rgba(243, 243, 243, 0.534);
+    border-top: 2px solid black;
+}
+
+.color_save > div#Nome{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    gap: 5px;
+    height: 40%;
+    overflow-y: auto;
+    background-color: lightgray;
+}
+
+.color_save > div#Cor, div#Cor_escolhida{
+    border-top: 2px solid black;
+}
+
+div > p.styleALL{
+    margin: 10px;
+    padding: 5px;
+    background-color: white;
+    border: 1px solid black;
+} 
+
+div > p.styleHoverAll:hover{
+    transform: scale(1.05);
+}
+
+.color_save > div#Cor{
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr; */
+    grid-template-columns: repeat(5, 1fr);
+    justify-items: center;
+    align-items: center;
+    gap: 5px;
+    height: 40%;
+    overflow-y: auto;
+
+}
+
+.color_save > div#Cor_escolhida{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 20%;
+}
+
+#Cor_escolhida > div#background{
+    width: 50%;
+    height: 50%;
+}
