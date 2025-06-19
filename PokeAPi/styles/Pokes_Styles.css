@@ -1,0 +1,96 @@
+@charset "UTF-8";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: PixelArt;
+    src: url(font/rainyhearts.ttf);
+}
+
+body{
+    width: 100vw;
+    height: calc(100vh - 5px); /* tira 5px do marginTop do header*/
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(img/forest_background.jpg);
+    background-position:  center center;
+}
+
+header{
+    margin: 0 auto;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    width: 500px;
+    height: 50px;
+    border: 3px dashed white;
+    backdrop-filter: blur(10px);
+}
+
+header h1{ 
+    padding: 5px;
+    font-family: PixelArt;
+    color: white;
+    text-align: center;
+}
+
+main.container_Poke{
+    display: grid;
+    grid-template: 200px 1fr / 1fr;
+    place-items: center center;
+    width: 98%;
+    height: calc(100vh - 70px); /*pega a altura do header*/
+    margin: 0 auto;
+    border: 2px solid rgba(255, 255, 255, 0.286);
+    border-radius: 5px;
+    backdrop-filter: blur(4px);
+    transition: width 0.5s;
+}
+
+.container_Poke > div#Nomes_poke{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    height: 200px;
+    text-align: center;
+}
+
+#Nomes_poke label{
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: white;
+}
+
+#Nomes_poke span{
+    font-size: 1.1em;
+    color: white;
+}
+
+#Nomes_poke input, select#Poke_select{
+    height: 25px;
+    width: 200px;
+    margin: auto;
+    outline: none;
+    text-align: center;
+    border-radius: 5px 0px;
+}
+
+.container_Poke > div#img_poke{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    border: 1px solid rgba(255, 255, 255, 0.286);
+}
+
+#img_poke > img.img_Pokes{
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    border: 1px solid white;
+}
