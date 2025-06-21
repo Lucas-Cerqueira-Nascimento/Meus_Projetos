@@ -14,17 +14,18 @@ body{
     width: 100vw;
     height: calc(100vh - 5px); /* tira 5px do marginTop do header*/
     font-family: Arial, Helvetica, sans-serif;
-    background-image: url(img/forest_background.jpg);
-    background-position:  center center;
+    background: url(img//forest_background.jpg) center bottom no-repeat; 
+    background-size: cover;
 }
 
 header{
     margin: 0 auto;
     margin-top: 5px;
     margin-bottom: 10px;
-    width: 500px;
+    width: 97%;
     height: 50px;
     border: 3px dashed white;
+    border-radius: 5px 5px 0px 5px;
     backdrop-filter: blur(10px);
 }
 
@@ -74,6 +75,8 @@ main.container_Poke{
     outline: none;
     text-align: center;
     border-radius: 5px 0px;
+    box-shadow: 2px 2px 8px #00000082;
+    font-family: monospace;
 }
 
 .container_Poke > div#img_poke{
@@ -93,4 +96,5 @@ main.container_Poke{
     height: 100px;
     text-align: center;
     border: 1px solid white;
+    border-radius: 10px;
 }

@@ -1,9 +1,39 @@
 @charset "UTF-8";
 
+/* Smartphone 320px*/
+@media (min-width: 320px) and (max-width: 375px) {
+header h1 {
+    padding: 5px;
+    font-family: PixelArt;
+    font-size: 1.7em;
+    color: white;
+    text-align: center;
+}
+
+#img_poke > img.img_Pokes {
+    width: 90px;
+    height: 90px;
+    text-align: center;
+    border: 1px solid white;
+}
+
+}
+
 /* Tablets */
-@media (min-width: 768px){
+@media (min-width: 768px) and (max-width: 1024px){
+
+header {
+    margin: 0 auto;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    width: 70%;
+    height: 50px;
+    border: 3px dashed white;
+    backdrop-filter: blur(10px);
+}
 
 main.container_Poke{
+    grid-template: 185px 1fr / 1fr;
     width: 70%;
     height: calc(100vh - 70px); 
 }
@@ -11,11 +41,12 @@ main.container_Poke{
 #Nomes_poke input, select#Poke_select{
     height: 28px;
     width: 205px;
+    font-size: 1.1em;
 }
 
-.container_Poke > div#img_poke{
+.container_Poke > div#img_poke {
     display: grid;
-    grid-template: repeat(2, 100px)/ repeat(4, 100px);
+    grid-template: 90px 90px 140px/ repeat(4, 100px);
     padding: 5px 0px;
     align-content: space-around;
 }
@@ -34,31 +65,61 @@ main.container_Poke{
 
 /* Laptops */
 @media (min-width: 1024px){
-main.container_Poke{
+header {
     width: 75%;
+    height: 50px;
+}
+    
+main.container_Poke {
+    width: 75%;
+    grid-template: 180px 1fr / 1fr;
+}
+
+.container_Poke > div#Nomes_poke {
+    height: 180px;
 }
 
 #Nomes_poke input, select#Poke_select {
-    height: 30px;
+    height: 28px;
     width: 210px;
 }
 
 .container_Poke > div#img_poke{
-    display: grid;
-    grid-template: repeat(2, 100px)/ repeat(4, 100px);
-    padding: 5px 0px;
-    align-content: space-around;
+    grid-template: 90px 90px 150px/ repeat(4, 100px);
 }
 
 #img_poke > img.img_Pokes{
     width: 100%;
     height: 100%;
-    text-align: center;
-    border: 1px solid white;
 }
 
 .grid_pokeImg{
     grid-column: 2/4;
 }
 
+}
+
+/* Laptops L */
+@media (min-width: 1440px) {
+main.container_Poke {
+    width: 75%;
+    grid-template: 200px 1fr / 1fr;
+}
+
+.container_Poke > div#Nomes_poke {
+    height: 200px;
+}
+
+#Nomes_poke input, select#Poke_select {
+    height: 30px;
+    width: 230px;
+    font-size: 1.4em;
+}
+
+.container_Poke > div#img_poke {
+    display: grid;
+    grid-template: 90px 90px 150px/ repeat(4, 100px);
+    align-content: space-evenly;
+    gap: 15px;
+}
 }
