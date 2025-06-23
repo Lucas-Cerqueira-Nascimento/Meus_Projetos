@@ -1,23 +1,36 @@
 // Sistema de mostrar qual pokémon você escolheu
 const inpt_Nome = document.querySelector("#Poke_name")
+ const loading = document.querySelector("div#Loading_")
 
  let timer = null
     inpt_Nome.addEventListener("input", () => {
         clearTimeout(timer) // Limpa o último setTimeout para n gerar loop quando digitar
         
     timer = setTimeout(() => { 
+      if(inpt_Nome.value != ""){
+        loading.style.display = "flex"
             BuscadorPoke(inpt_Nome.value) // executa a função quando parar de digitar  
             inpt_Nome.value = ""
+      }
         },1500)
     
     })
 
 async function BuscadorPoke(name_poke){
-
+  try{
     const resposta = await fetch(`https://pokeapi.co/api/v2/pokemon/${name_poke}`)
       const datails = await resposta.json()
-   PrintSpriters(datails)
 
+    setTimeout(() => {
+      PrintSpriters(datails)
+    }, 1000)
+  }
+  catch (err){ // Caso Pokémon não encontrado: [Erro]
+    loading.style.display = "none"
+    alert(`Pokémon não encontrado!`);
+    console.log(err)
+  }
+  setTimeout(() => {loading.style.display = "none"}, 999)   
 }
 
 function PrintSpriters(date){
@@ -111,7 +124,10 @@ const mostrarValor = debounce(() => { // func  () => { console.log(input.value) 
 
 }, 1500) // delay
 
-selectPoke.addEventListener("change", mostrarValor) //...args recebe o evento do select
+selectPoke.addEventListener("change", () => {
+  mostrarValor()
+  loading.style.display = "flex"
+}) //...args recebe o evento do select
 
 //função para colocar todos os pokémons no <select>
 function keepAllnamesPoke(){
@@ -143,3 +159,4 @@ fetch("https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0")
 }
 keepAllnamesPoke()
 
+// fazer sistema de loading quando estiver procurando o pokémon :)q

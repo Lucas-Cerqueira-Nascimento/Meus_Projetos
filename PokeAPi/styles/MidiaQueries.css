@@ -1,9 +1,9 @@
 @charset "UTF-8";
 
-/* Smartphone 320px*/
+/* Mobiles S and M */
 @media (min-width: 320px) and (max-width: 375px) {
 header h1 {
-    padding: 5px;
+    padding: 9px;
     font-family: PixelArt;
     font-size: 1.7em;
     color: white;
@@ -17,6 +17,17 @@ header h1 {
     border: 1px solid white;
 }
 
+}
+
+/* Mobile L */
+@media (min-width: 425px) and (max-width: 768px) {
+main.container_Poke {
+    grid-template: 190px 1fr / 1fr;
+}
+
+div#Loading_{
+    height: 98%;
+}
 }
 
 /* Tablets */
@@ -61,6 +72,12 @@ main.container_Poke{
 .grid_pokeImg{
     grid-column: 2/4;
 }
+
+div#Loading_{
+    width: 84%;
+    height: 98%;
+}
+
 }
 
 /* Laptops */
@@ -97,6 +114,10 @@ main.container_Poke {
     grid-column: 2/4;
 }
 
+div#Loading_ {
+    width: 60%;
+    height: 98%;
+}
 }
 
 /* Laptops L */
@@ -121,5 +142,10 @@ main.container_Poke {
     grid-template: 90px 90px 150px/ repeat(4, 100px);
     align-content: space-evenly;
     gap: 15px;
+}
+
+div#Loading_ {
+    width: 50%;
+    height: 96%;
 }
 }
