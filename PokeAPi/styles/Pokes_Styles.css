@@ -127,10 +127,12 @@ div#Loading_ > p{
     0%{
         font-size: 1.5em;   
         border-color: #e7774d;
+        
     }
     50%{
         font-size: 2em;
         border-color: #f6f63ed6;
+        color: black;
     }
     100%{
         font-size: 1.5em;   
