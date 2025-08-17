@@ -3,15 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="shortcut icon" href="styles/img/pokedex.jpeg" type="image/x-icon">
     <link rel="stylesheet" href="styles/Pokes_Styles.css">
     <link rel="stylesheet" href="styles/MidiaQueries.css">
+    <link rel="stylesheet" href="styles/PokemonTypes.css">
     <title>Pokédex</title>
 </head>
 <body>
     <header><h1>Pokédex de Pokémon</h1></header>
 
 <main class="container_Poke">
+    <menu class="menu__">
+<span id="menu_type" class="material-symbols-outlined">menu</span>
+    </menu>
+
+    <div class="pokeTypes" style="display: block;">
+    <span id="type" class="material-symbols-outlined">
+        Close
+    </span>
+        <div class="btn">
+            <span class="material-symbols-outlined">
+            arrow_back_ios
+            </span>
+    
+            <span class="material-symbols-outlined">
+            arrow_forward_ios
+            </span> 
+        </div>
+
+        <div id="normalType" class="types On">Normal</div>
+        <div id="fireType" class="types">fire</div>
+        <div id="waterType" class="types">Water</div>
+        <div id="grassType" class="types">Grass</div>
+        <div id="electricType" class="types">Electric</div>
+        <div id="iceType" class="types">Ice</div>
+        <div id="fightingType" class="types">Fighting</div>
+        <div id="poisonType" class="types">Poison</div>
+        <div id="groundType" class="types">Ground</div>
+        <div id="flyingType" class="types">Flying</div>
+        <div id="psychicType" class="types">Psychic</div>
+        <div id="bugType" class="types">Bug</div>
+        <div id="rockType" class="types">Rock</div>
+        <div id="ghostType" class="types">Ghost</div>
+        <div id="dragonType" class="types">Dragon</div>
+        <div id="steelType" class="types">Steel</div>
+        <div id="darkType" class="types">Dark</div>
+        <div id="fairyType" class="types">Fairy</div>
+    </div>
 
     <div id="Nomes_poke">
         <label for="Poke_name">Nome do Pokémon:</label>
@@ -32,5 +71,6 @@
 </main>
 
 <script src="Pokes_.js"></script>
+<script src="EventDOM.js"></script>
 </body>
 </html>

@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+div.pokeTypes{
+    position: absolute;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+}
+
+.pokeTypes span#type{
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    color: red;
+}
+
+div.btn{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.pokeTypes{
+    display: none;
+}
+
+.pokeTypes.On{
+    display: block;
+}
+
+#normalType{
+    background: url(img/Normal_ground.png);
+    background-position: bottom center;
+}
+
+.types.On{
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.types{
+    display: none;
+}
+

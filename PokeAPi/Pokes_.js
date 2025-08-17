@@ -6,10 +6,10 @@ const inpt_Nome = document.querySelector("#Poke_name")
     inpt_Nome.addEventListener("input", () => {
         clearTimeout(timer) // Limpa o último setTimeout para n gerar loop quando digitar
         
-    timer = setTimeout(() => { 
+    timer = setTimeout( async () => { 
       if(inpt_Nome.value != ""){
         loading.style.display = "flex"
-            BuscadorPoke(inpt_Nome.value) // executa a função quando parar de digitar  
+            await BuscadorPoke(inpt_Nome.value) // executa a função quando parar de digitar  
             inpt_Nome.value = ""
       }
         },1500)
@@ -21,9 +21,7 @@ async function BuscadorPoke(name_poke){
     const resposta = await fetch(`https://pokeapi.co/api/v2/pokemon/${name_poke}`)
       const datails = await resposta.json()
 
-    setTimeout(() => {
-      PrintSpriters(datails)
-    }, 1000)
+    setTimeout(() => { PrintSpriters(datails) },1000)
   }
   catch (err){ // Caso Pokémon não encontrado: [Erro]
     loading.style.display = "none"
@@ -55,11 +53,7 @@ spriteSources.forEach((src, index) => {
     Img_Sprit.src = src
     div_img.appendChild(Img_Sprit)
 
-    if(src == null){
-      Img_Sprit.style.color = "white"
-       Img_Sprit.alt = "Imagem não encontrada!"
-      Img_Sprit.title = "Versão Fêmea"
-    }
+    if(!src) return Img_Sprit.remove();
 
     // jeito do ChatGPT (muito daora isso)
     const imgMap = {
@@ -69,6 +63,7 @@ spriteSources.forEach((src, index) => {
       6: `${date.name} Shiny Fêmea`, 
     }
       // imgMap pega o index correto dos src. 
+      
     Img_Sprit.title = imgMap[index] || date.name // caso não tenha o index, eles fica com date.name / default
   
     // meu jeito
