@@ -7,21 +7,45 @@ div.pokeTypes{
     height: 100%;
 }
 
-.pokeTypes span#type{
+.pokeTypes span#closeTab{
     position: absolute;
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
+    top: 0px;
+    right: 0px;
     color: red;
+    cursor: pointer;
 }
 
-div.btn{
+div.arrows{
     position: absolute;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    grid-template: repeat(3, 1fr)/ 1fr;
+    justify-items: center;
+    align-items: end;
     width: 100%;
     height: 100%;
+}
+
+.arrows > div.style_arrow{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 0px 5px 6px;
+    width: 100%;
+
+    grid-row: 3/-1;
+}
+
+.style_arrow > button#selectType{
+    width: 100px;
+    height: 25px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid black;
+    backdrop-filter: blur(5px);
+}
+
+.type:hover{
+    cursor: pointer;
+    transform: scale(1.1);
 }
 
 .pokeTypes{
@@ -33,8 +57,11 @@ div.btn{
 }
 
 #normalType{
-    background: url(img/Normal_ground.png);
-    background-position: bottom center;
+    background: url(img/Normal_ground.png) no-repeat bottom center / cover;
+}
+
+#fireType{
+    background: url(img/Fire_ground.jpg) no-repeat bottom center / cover;
 }
 
 .types.On{
