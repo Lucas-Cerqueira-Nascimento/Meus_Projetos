@@ -8,9 +8,7 @@ div.pokeTypes{
 }
 
 .pokeTypes span#closeTab{
-    position: absolute;
-    top: 0px;
-    right: 0px;
+    grid-column: 3/-1;
     color: red;
     cursor: pointer;
 }
@@ -18,23 +16,16 @@ div.pokeTypes{
 div.arrows{
     position: absolute;
     display: grid;
-    grid-template: repeat(3, 1fr)/ 1fr;
+    grid-template: 5% 1fr/ 5% 1fr 5%;
     justify-items: center;
     align-items: end;
     width: 100%;
     height: 100%;
+    padding: 0px 5px 5px 5px;
+
 }
 
-.arrows > div.style_arrow{
-    display: flex;
-    justify-content: space-between;
-    padding: 0px 0px 5px 6px;
-    width: 100%;
-
-    grid-row: 3/-1;
-}
-
-.style_arrow > button#selectType{
+button#selectType{
     width: 100px;
     height: 25px;
     outline: none;
@@ -43,9 +34,19 @@ div.arrows{
     backdrop-filter: blur(5px);
 }
 
+span.material-symbols-outlined{
+    color: white;
+    
+}
+
 .type:hover{
     cursor: pointer;
     transform: scale(1.1);
+    color: gray;
+}
+
+.type:active{
+    transform: scale(0.8);
 }
 
 .pokeTypes{
@@ -56,20 +57,43 @@ div.arrows{
     display: block;
 }
 
+.types.On {
+    display: grid;
+    grid-template: 10% 30% 40% / 1fr;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.types{
+    display: none;
+}
+
+
+div#artigo{
+    background: url(img/original.jpg) no-repeat right center / cover;
+}
+/* TIPOS de Pokemons*/
 #normalType{
     background: url(img/Normal_ground.png) no-repeat bottom center / cover;
 }
 
 #fireType{
     background: url(img/Fire_ground.jpg) no-repeat bottom center / cover;
+    color: white;
 }
 
 #waterType{
-    background: blue;
+    background: url(img/Water_ground.png) no-repeat bottom center / cover;
 }
 
 #grassType{
     background: green;
+
 }
 
 #electricType{
@@ -129,14 +153,5 @@ div.arrows{
     background: pink;
 }
 
-.types.On{
-    display: block;
-    width: 100%;
-    height: 100%;
-    border-radius: 5px;
-}
 
-.types{
-    display: none;
-}
 
