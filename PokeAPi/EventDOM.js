@@ -43,7 +43,7 @@ function SelectTypePokemon(index){
     btn_selectType.addEventListener("click", () => {
         pokeTypes.forEach((poke, i) => {
             if(i === index && poke.classList.contains("On")){
-                console.log(poke)
+                divType.classList.remove("On")
             }
         })
     })

@@ -64,6 +64,71 @@ div.arrows{
     background: url(img/Fire_ground.jpg) no-repeat bottom center / cover;
 }
 
+#waterType{
+    background: blue;
+}
+
+#grassType{
+    background: green;
+}
+
+#electricType{
+    background: yellow;
+}
+
+#iceType{
+    background: lightblue;
+}
+
+#fightingType{
+    background: orangered;
+}
+
+#poisonType{
+    background: purple;
+}
+
+#groundType{
+    background-color: brown;
+}
+
+#flyingType{
+    background: skyblue;
+}
+
+#psychicType{
+    background: palevioletred;
+}
+
+#bugType{
+    background: greenyellow;
+}
+
+#rockType{
+    background: gray;
+}
+
+#ghostType{
+    background: rgba(128, 0, 128, 0.527);
+}
+
+#dragonType{
+    background: lightslategray;
+}
+
+#steelType{
+    background: rgb(156, 177, 199);
+}
+
+#darkType{
+    background: black;
+    color: white;
+}
+
+#fairyType{
+    background: pink;
+}
+
 .types.On{
     display: block;
     width: 100%;
