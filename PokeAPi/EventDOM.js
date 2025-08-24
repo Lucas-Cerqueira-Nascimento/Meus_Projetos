@@ -27,24 +27,24 @@ function changeTypes(value){
     const numValue = (currentIndex) + value
 
     if(numValue < 0 || numValue >= pokeTypes.length) return;
-
+    
     currentIndex = numValue
 
     //console.log(currentIndex)
-
     SelectTypePokemon(currentIndex)
     AllpokesUpdate(currentIndex)
 }
 
 // Event SelectType of Pokemon
 const btn_selectType = document.querySelector("#selectType")
-
+ const SelectPoke = document.querySelector("#Poke_select")
 function SelectTypePokemon(index){
     btn_selectType.addEventListener("click", () => {
+        SelectPoke.innerHTML = ""
         pokeTypes.forEach((poke, i) => {
             if(i === index && poke.classList.contains("On")){
                 divType.classList.remove("On")
-                ApiFetch(index)
+                ApiFetchAllTypes(index)
             }
         })
     })
@@ -57,35 +57,28 @@ const NextArrow = document.querySelector("#next")
 NextArrow.addEventListener("click", () => changeTypes(1))
 
 // Api do tipo de pokemon
-async function ApiFetch(Num){ 
+async function ApiFetchAllTypes(Num){ 
 
     const res = await fetch(`https://pokeapi.co/api/v2/type/${Num}`)
 
-    const dados = await res.json()
-
-    console.log(dados.name)
-}
-
-async function Test(){
-    const res = await fetch("https://pokeapi.co/api/v2/type/1")
     const dados = await res.json()
 
     //console.log(dados.pokemon[0].pokemon.name) //Acessa o obj do pokemon dentro do array 
     
     //console.log(dados["pokemon"][0]["pokemon"]["name"])
 
-
-    const Allnames = dados.pokemon //Acessa todos os pokemons
+    const Alldata = dados.pokemon //Acessa todos os pokemons
     //console.log(Allnames)
 
-    Allnames.forEach((pokes, i) => {
+    Alldata.forEach((pokes, i) => {
         //console.log(pokes) Objetos
+        //console.log(pokes.pokemon.name)
         //console.log(i) Chave dos pokemons
 
-        // let test = dados.pokemon[i].pokemon.name
-
-        // console.log(test) //Saída: Todos os nomes dos Pokemons!
+        const options = document.createElement("option")
+        const pokeNames = pokes.pokemon.name
+        
+        options.innerText = pokeNames
+        SelectPoke.appendChild(options)       
     })
 }
-
-Test()

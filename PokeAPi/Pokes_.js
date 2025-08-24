@@ -154,4 +154,4 @@ fetch("https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0")
 }
 keepAllnamesPoke()
 
-// fazer sistema de loading quando estiver procurando o pokémon :)q
+// fazer sistema de loading quando estiver procurando o pokémon :)
