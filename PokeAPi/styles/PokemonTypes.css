@@ -79,79 +79,83 @@ div#artigo{
 }
 /* TIPOS de Pokemons*/
 #normalType{
-    background: url(img/Background/Normal_ground.png) no-repeat bottom center / cover;
+    background: url(img/Background/normal_background.jpg) no-repeat bottom center / cover;
 }
 
 #fireType{
-    background: url(img/Background/Fire_ground.jpg) no-repeat bottom center / cover;
+    background: url(img/Background/fire_background.jpg) no-repeat bottom center / cover;
     color: white;
 }
 
 #waterType{
-    background: url(img/Background/Water_ground.png) no-repeat bottom center / cover;
+    background: url(img/Background/water_background.png) no-repeat bottom center / cover;
 }
 
 #grassType{
-    background: green;
+    background: url(img/Background/grass_background.jpg) no-repeat bottom center / cover;
 
 }
 
 #electricType{
-    background: yellow;
+    background: url(img/Background/electric_background.jpg) no-repeat bottom center / cover;
 }
 
 #iceType{
-    background: lightblue;
+    background: url(img/Background/ice_background.jpg) no-repeat center center / cover;
 }
 
 #fightingType{
-    background: url(img/Background/fight_ground.png) no-repeat center center / cover;
+    background: url(img/Background/fighting_background.png) no-repeat center center / cover;
 }
 
 #poisonType{
-    background: purple;
+    background: url(img/Background/poison_backgorund.jpg) no-repeat right center / cover;
+    color: white;
 }
 
 #groundType{
-    background-color: brown;
+    background: url(img/Background/ground_background.png) no-repeat center center / cover;
 }
 
 #flyingType{
-    background: linear-gradient(to top, #cdcffc, #4d62a4);
+    background:  url(img/Background/flying_background.jpg) no-repeat center center / cover;
 }
 
 #psychicType{
-    background: palevioletred;
+    background: url(img/Background/psychic_background.jpg)  no-repeat center center / cover;
 }
 
 #bugType{
-    background: greenyellow;
+    background: url(img/Background/bug_background.jpg) no-repeat center center / cover;
 }
 
 #rockType{
-    background: gray;
+    background: url(img/Background/rock_background.jpg) no-repeat center center / cover;
 }
 
 #ghostType{
-    background: rgba(128, 0, 128, 0.527);
+    background: url(img/Background/ghost_background.jpg) no-repeat center center / cover;
 }
 
 #dragonType{
-    background: lightslategray;
+    background:  url(img/Background/dragon_background.jpg) no-repeat center center / cover;
 }
 
 #steelType{
-    background: rgb(156, 177, 199);
+    background: url(img/Background/steel_background.jpg) no-repeat center center/ cover;
 }
 
 #darkType{
-    background: black;
+    background: url(img/Background/dark_background.jpg) no-repeat center center / cover;
     color: white;
 }
 
 #fairyType{
-    background: pink;
+    background: url(img/Background/fairy_background.jpg) no-repeat center center / cover;
 }
 
-
+#stellarType{
+    background: url(img/Background/stellar_background.jpeg) no-repeat center center / cover;
+    color: white;
+}
 
