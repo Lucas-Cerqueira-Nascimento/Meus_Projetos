@@ -5,8 +5,9 @@ const tes = new Object()
 function salvar() {
        tes.nome = inpt_name.value
         tes.age = inpt_age.value
-
-    const {nome , age} = tes 
+         tes.date = new Date()
+    const {nome, age, date} = tes 
+    console.log(date)
 
     const names = JSON.parse(localStorage.getItem("nome")) || []
     const idade = JSON.parse(localStorage.getItem("age")) || []
