@@ -1,0 +1,18 @@
+[
+        {
+        "name" : "lucas",
+        "age": 19
+
+},
+    {
+        "name": "isaque",
+        "age": 18
+},
+    {
+        "name": "andre",
+        "age": 19,
+    "TESTE": {
+        "test" : false
+    }
+}
+]
