@@ -1,20 +1,29 @@
 import { ChevronLeftIcon } from "lucide-react";
-import { useSearchParams } from "react-router";
+import { useNavigate, useSearchParams } from "react-router";
 
 function TaskPage() {
   const [searchParams] = useSearchParams();
   const title = searchParams.get("title"); // Pega o Query
   const description = searchParams.get("description");
+  const navigate = useNavigate();
   return (
     <div className="w-screen h-screen bg-slate-500 p-6">
-      <h1 className="flex justify-center text-3xl text-slate-100 font-bold text-center title">
-        <ChevronLeftIcon />
-        Detalhes da tarefa
-      </h1>
-      <div className="text-left bg-slate-400 w-full text-white p-2 rounded-md lists">
-        <div className="space-y-4 p-6 bg-slate-200 rounded-md shadow border">
-          <h2 className="text-slate-700 text-2xl">{title}</h2>
-          <p className="text-slate-700">{description}</p>
+      <div className="w-[500px] mx-auto space-y-4">
+        <div className="flex justify-center relative mb-6">
+          <button
+            onClick={() => navigate("/")}
+            className="absolute left-0 top-0 bottom-0 text-slate-100"
+          >
+            <ChevronLeftIcon />
+          </button>
+          <h1 className="text-3xl text-slate-100 font-bold text-center">
+            Detalhes da Tarefa
+          </h1>
+        </div>
+
+        <div className="bg-slate-200 p-4 rounded-md">
+          <h2 className="text-xl font-bold text-slate-600">{title}</h2>
+          <p className="text-slate-600">{description}</p>
         </div>
       </div>
     </div>

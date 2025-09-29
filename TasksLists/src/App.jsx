@@ -1,19 +1,31 @@
 import AddTasks from "./components/AddTasks";
 import Tasks from "./components/Tasks";
 import "./App.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 function App() {
-  const [tasks, setTasks] = useState([
-    {
-      id: 1,
-      title: "Estudar Programação",
-      description:
-        "Estudar Programaçõa para se tornar um desenvolvedor full stack.",
-      isCompleted: false,
-    },
-  ]);
+  const [tasks, setTasks] = useState(
+    JSON.parse(localStorage.getItem("tasks")) || []
+  );
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
+
+  // useEffect(() => {
+  //   async function onFetchTask() {
+  //     const res = await fetch(
+  //       "https://jsonplaceholder.typicode.com/todos?_limit=5"
+  //     );
+
+  //     const data = await res.json();
+
+  //     setTasks(data); //Altera o state colocando a api
+  //   }
+
+  //   onFetchTask();
+  // }, []);
 
   function onTaskSubmit(title, description) {
     const newTask = {
