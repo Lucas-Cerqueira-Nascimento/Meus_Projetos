@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-function UserValue() {
+function UserValue({ newUserAdd }) {
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
-  const [opcaoSelecionada, setOpcaoSelecionada] = useState("M");
+  const [opcaoSelecionada, setOpcaoSelecionada] = useState("");
   return (
     <div className="flexUser bg-gray-200">
       <label htmlFor="Nome">Nome:</label>
@@ -15,7 +15,7 @@ function UserValue() {
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
-      <label htmlFor="Idade">Idade:</label>
+      <label htmlFor="Idade">Idade: {age}</label>
       <input
         type="range"
         id="Idade"
@@ -52,12 +52,16 @@ function UserValue() {
 
       <button
         onClick={() => {
-          console.log(name);
-          console.log(age);
-          console.log(opcaoSelecionada);
-          setName("");
+          if (!name.trim() || !age.trim() || !opcaoSelecionada) {
+            alert("Preencha os campo campos que estão faltando");
+          } else {
+            newUserAdd(name, age, opcaoSelecionada);
+            setName("");
+            setAge("50");
+            setOpcaoSelecionada("");
+          }
         }}
-        className="bg-slate-500 text-white w-[100px] rounded-sm"
+        className="bg-slate-500 text-white w-[100px] rounded-sm save"
       >
         Salvar!
       </button>
