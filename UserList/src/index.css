@@ -51,11 +51,38 @@ ul.userList {
   height: 100%;
 }
 
-li {
+li.lists {
   width: max-content;
   height: max-content;
   margin: 10px;
   padding: 5px;
   border: 2px solid black;
   border-radius: 5px;
+}
+
+.lists > button:hover {
+  color: blue;
+  font-size: 17px;
+}
+
+ul.UserPage {
+  display: grid;
+  grid-template: repeat(3, 1fr) / 1fr;
+}
+
+ul.UserPage > li {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.TrashIcon {
+  top: 89%;
+  left: 94%;
+  color: red;
+}
+.TrashIcon:hover {
+  fill: rgba(255, 0, 0, 0.705);
+  stroke: red;
 }
